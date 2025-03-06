@@ -106,10 +106,9 @@ scene.add(object1)
 const transverse = new THREE.LineBasicMaterial({
 color: 0x00ff00,
 linewidth: '6'
-})
+});
 
-  //location 
-var geo;
+//location 
 
 function getLocation() {     
     if (navigator.geolocation) {       
@@ -120,7 +119,7 @@ function getLocation() {    
 
 function showPosition(position) {
    var latlon = position.coords.latitude + "," + position.coords.longitude;
-   geo=[ position.coords.latitude , position.coords.longitude];
+   const geo=[ position.coords.latitude , position.coords.longitude];
 
      }
 
