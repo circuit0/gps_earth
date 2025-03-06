@@ -108,37 +108,45 @@ color: 0x00ff00,
 linewidth: '6'
 });
 
-//location 
-var geo=0;
+  //location 
+
+
 function getLocation() {     
     if (navigator.geolocation) {       
               navigator.geolocation.getCurrentPosition(showPosition, showError);
      } else {
-              x.innerHTML = "Geolocation is not supported by this browser.";
+              alert("Geolocation is not supported by this browser.");
           } }
 
 function showPosition(position) {
    var latlon = position.coords.latitude + "," + position.coords.longitude;
-   geo=[ position.coords.latitude , position.coords.longitude];
-     }
+  lat= position.coords.latitude;
+  lon= position.coords.longitude;
+}
 
 function showError(error) {
     switch(error.code) {
         case error.PERMISSION_DENIED:
-         x.innerHTML = "User denied the request for Geolocation."
+         alert("User denied the request for Geolocation.")
            break;
         case error.POSITION_UNAVAILABLE:
-             x.innerHTML = "Location information is unavailable."
+             alert("Location information is unavailable.")
           break;
        case error.TIMEOUT:
-             x.innerHTML = "The request to get user location timed out ."
+             alert("The request to get user location timed out .")
           break;
        case error.UNKNOWN_ERROR:
-             x.innerHTML = "An unknown error occurred." 
+             alert("An unknown error occurred." )
           break;     } }
-getLocation();
 
+var lat;
+var lon;
+getLocation()
 
+setTimeout(function(){
+var geo=[lat , lon]
+console.log(geo)
+    
 const coord=[]
 coord.push(new THREE.Vector3(0,0,0))
 coord.push(new THREE.Vector3(0,11*Math.sin(Math.PI/180*geo[0]),11*Math.cos(Math.PI/180*geo[0])))
@@ -199,6 +207,7 @@ const container = document.querySelector('#threejs-container')
 container.append(canvas)
 renderer.render(scene, camera)
 animate()
+},200)
 </script>
 </body>
 </html>
