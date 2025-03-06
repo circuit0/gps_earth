@@ -109,7 +109,7 @@ linewidth: '6'
 });
 
 //location 
-
+var geo
 function getLocation() {     
     if (navigator.geolocation) {       
               navigator.geolocation.getCurrentPosition(showPosition, showError);
@@ -119,8 +119,7 @@ function getLocation() {    
 
 function showPosition(position) {
    var latlon = position.coords.latitude + "," + position.coords.longitude;
-   const geo=[ position.coords.latitude , position.coords.longitude];
-return geo;
+   geo=[ position.coords.latitude , position.coords.longitude];
      }
 
 function showError(error) {
