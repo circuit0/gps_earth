@@ -109,7 +109,7 @@ linewidth: '6'
 })
 
   //location 
-const geo;
+var geo;
 
 function getLocation() {     
     if (navigator.geolocation) {       
@@ -140,7 +140,7 @@ function showError(error) {
           break;     } }
 getLocation();
 
-const geo=[28.53, 77.26]
+
 const coord=[]
 coord.push(new THREE.Vector3(0,0,0))
 coord.push(new THREE.Vector3(0,11*Math.sin(Math.PI/180*geo[0]),11*Math.cos(Math.PI/180*geo[0])))
