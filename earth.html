@@ -18,6 +18,7 @@ html,
 body {
 height: 100%;
 width: 100%;
+background-color:black;
 }
 #threejs-container {
       height:100vw; 
@@ -30,11 +31,12 @@ width: 100vh;
 height: 100vh;
     }
   }
-      
+#loc{color:white; align:center; font-family:calibri; padding:0 10px; size:24px;}
 </style>
 </head>
 <body>
 <div id="threejs-container"></div>
+<p id="loc"></p>
 
 <script type="importmap">
 {"imports":{
@@ -133,6 +135,7 @@ function showPosition(position) {
    var latlon = position.coords.latitude + "," + position.coords.longitude;
   lat= position.coords.latitude;
   lon= position.coords.longitude;
+      document.getElementById("loc").innerHTML=lat +'°N , ' + lon + '°E';
 }
 
 function showError(error) {
