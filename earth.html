@@ -84,7 +84,7 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
 // camera
 const camera = new THREE.PerspectiveCamera(45, width / height, 0.01, 100)
-camera.position.set(Math.sin(Math.PI/180*170),Math.cos(Math.PI/180*170),50)
+camera.position.set(50*Math.sin(Math.PI/180*170),0,50*Math.cos(Math.PI/180*170))
 
 
 const controls= new OrbitControls(camera, renderer.domElement)
