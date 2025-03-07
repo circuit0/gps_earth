@@ -59,6 +59,10 @@ import {GUI} from 'three/addons/libs/lil-gui.module.min.js';
 //const gui=new GUI();
 let width = 500
 let height = 500
+if(window.innerWidth<500){
+      width=window.innerWidth;
+      height=window.innerWidth;
+}
 // scene
 const scene = new THREE.Scene()
 scene.background = new THREE.Color(0x111)
@@ -197,8 +201,6 @@ scene.add(vertical)
 
 // responsiveness
 window.addEventListener('resize', () => {
-width = 500
-height = 500
 camera.aspect = width / height
 camera.updateProjectionMatrix()
 renderer.setSize(width, height)
