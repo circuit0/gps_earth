@@ -145,6 +145,9 @@ function showPosition(position) {
   lat= position.coords.latitude;
   lon= position.coords.longitude;
       document.getElementById("loc").innerHTML=lat +'°N , ' + lon + '°E';
+localStorage.setItem('lat',lat);
+localStorage.setItem('lon',lon);
+
 }
 
 function showError(error) {
@@ -166,8 +169,8 @@ var lat;
 var lon;
 getLocation()
 
-setTimeout(function(){
-var geo=[lat , lon]
+
+var geo=[localStorage.getItem("lat") , localStorage.getItem("lon")]
 console.log(geo)
     
 const coord=[]
@@ -228,7 +231,6 @@ const container = document.querySelector('#threejs-container')
 container.append(canvas)
 renderer.render(scene, camera)
 animate()
-},2000)
      
 </script>
 </body>
