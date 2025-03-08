@@ -30,11 +30,13 @@ canvas{width:100vw; height:100vw}
 width: 100vh;
 height: 100vh;
     }
+#loc{display: none;}
   }
 #loc{color:white;
      text-align:center;
      font-family:calibri;
      padding:16px 0;
+     margin-top:50vw;
      size:24px;}
 </style>
 </head>
@@ -208,14 +210,14 @@ renderer.render(scene, camera)
 function animate() {
 requestAnimationFrame(animate)
 let objects = [plane]
-objects.forEach((i) => {
+/*objects.forEach((i) => {
 i.rotation.z +=-0.00875
 })
 vertical.rotation.y-=0.00875
 magentaCylinder.rotation.y+=0.005
-magentaCylinder.rotation.z+=0.005
+magentaCylinder.rotation.z+=0.005*/
 renderer.render(scene, camera)
-controls.update()
+//controls.update()
 }
 var canvas = renderer.domElement;
 // rendering the scene
