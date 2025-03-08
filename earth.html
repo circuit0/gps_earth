@@ -144,8 +144,9 @@ function showPosition(position) {
    var latlon = position.coords.latitude + "," + position.coords.longitude;
   lat= position.coords.latitude;
   lon= position.coords.longitude;
-      document.getElementById("loc").innerHTML=lat +'°N , ' + Number(lon)*90 + '°E';
-
+      document.getElementById("loc").innerHTML=lat +'°N , ' + Number(lon) + '°E';
+localStorage.setItem("lat", lat);
+localStorage.setItem("lon", lon);
 }
 
 function showError(error) {
@@ -167,8 +168,7 @@ var lat;
 var lon;
 getLocation()
 
-setTimeout(function(){
-var geo=[lat, lon]
+var geo=[Number(localStorage.getItem("lat"))*1,Number(localStorage.getItem("lon"))*1]
 console.log(geo)
     
 const coord=[]
@@ -229,8 +229,7 @@ const container = document.querySelector('#threejs-container')
 container.append(canvas)
 renderer.render(scene, camera)
 animate()
-},2000)
-     
+
 </script>
 </body>
 </html>
