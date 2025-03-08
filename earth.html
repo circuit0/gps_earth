@@ -145,8 +145,8 @@ function showPosition(position) {
   lat= position.coords.latitude;
   lon= position.coords.longitude;
       document.getElementById("loc").innerHTML=lat +'°N , ' + lon + '°E';
-localStorage.setItem('lat',lat);
-localStorage.setItem('lon',lon);
+localStorage.setItem("lat",lat);
+localStorage.setItem("lon",lon);
 
 }
 
@@ -170,7 +170,7 @@ var lon;
 getLocation()
 
 
-var geo=[localStorage.getItem("lat") , localStorage.getItem("lon")]
+var geo=[localStorage.getItem("lat") , localStorage.getItem("lon")+90]
 console.log(geo)
     
 const coord=[]
