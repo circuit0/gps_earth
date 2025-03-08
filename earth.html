@@ -88,7 +88,7 @@ renderer.setSize(width, height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
 // camera
-const camera = new THREE.PerspectiveCamera(45, width / height, 0.01, 100)
+const camera = new THREE.PerspectiveCamera(45, width / height, 0.01, 400)
 camera.position.set(50*Math.sin(Math.PI/180*170),0,50*Math.cos(Math.PI/180*170))
 
 
