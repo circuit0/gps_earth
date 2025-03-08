@@ -39,14 +39,6 @@ height: 100vh;
      padding:16px 0;
      margin-top:50vw;
      size:24px;}
-button{text-align:center;
-       background-color: green;
-       color:white;
-       font-size:10vw;
-       padding: 5vw 10vw;
-       border-radius:15vw;
-       border:none;
-       margin:10vw;}
 </style>
 </head>
 <body>
@@ -236,24 +228,7 @@ container.append(canvas)
 renderer.render(scene, camera)
 animate()
 },2000)
-
-var canvas = renderer.domElement;
-      
-document.getElementById('download').addEventListener('click', function(e) {
-    // Convert our canvas to a data URL
-    let canvasUrl = canvas.toDataURL();
-    // Create an anchor, and set the href value to our data URL
-    const createEl = document.createElement('a');
-    createEl.href = canvasUrl;
-
-    // This is the name of our downloaded file
-    createEl.download = "download-this-canvas";
-
-    // Click the download button, causing a download, and then remove it
-    createEl.click();
-    createEl.remove();
-});
-      
+     
 </script>
 </body>
 </html>
